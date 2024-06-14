@@ -1,4 +1,4 @@
-package evaluacion_tecnica_pil_java_1_consignas;
+package primer_cuestionario;
 
 public class EvaluacionTecnicaPil1 {
 
@@ -55,5 +55,4 @@ public class EvaluacionTecnicaPil1 {
 					System.out.println("l = " + l);
 			}
 	}
-
 }
