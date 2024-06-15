@@ -102,7 +102,7 @@ public class Candidato implements Comparable<Candidato>{
 	}
 	
 	public List<Tecnologias> ordenarTecnologias(){
-		tecnologias.sort((t1, t2) -> t1.getNombre().compareTo(t2.getNombre()));
+		tecnologias.sort((tec1, tec2) -> tec1.getNombre().compareTo(tec2.getNombre())); /*tengo que definir las variables tec 1 y tec 2 en la clase Tecnologias*/ /*expresiones lambda es mejor*/
         return tecnologias;
 	}
 }

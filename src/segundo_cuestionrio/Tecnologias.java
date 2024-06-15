@@ -1,7 +1,5 @@
 package segundo_cuestionrio;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class Tecnologias {
@@ -9,7 +7,7 @@ public class Tecnologias {
 	Long id;
 	String nombre;
 	
-	List<Tecnologias> tecnologias = new ArrayList<>();
+	// List<Tecnologias> tecnologias = new ArrayList<>();
 	
 	
 	public Tecnologias(Long id, String nombre) {
