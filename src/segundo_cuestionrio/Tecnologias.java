@@ -53,4 +53,8 @@ public class Tecnologias {
 	public String toString() {
 		return "Tecnologias [id=" + id + ", nombre=" + nombre + "]";
 	}
+	
+	public boolean esIdPar() {
+        return (id % 2) == 0;
+    }
 }

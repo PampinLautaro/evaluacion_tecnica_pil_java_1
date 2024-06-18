@@ -58,5 +58,24 @@ public class EvaluacionTecnicaPil2 {
 		candidatos.stream().sorted((cand1, cand2) -> cand2.getPretensionSalarial().compareTo(cand1.getPretensionSalarial()))
         .forEach(cand -> System.out.println(cand.getPretensionSalarial() + " " + cand.getNombre() + " " + cand.getApellido()));
 	}
+	
+	public void resolverPunto4 (List<Candidato> candidatos) {
+		/*candidatos.stream().sorted((cand1, cand2) -> cand2.getAnosExperiencia().compareTo(cand1.getAnosExperiencia()));*/
+		/*ordenarTecnologias.forEach(System.out.println(ordenarTecnologias));*/
+		
+		Candidato candidatoConMasExperiencia = candidatos.stream().max((c1, c2) -> c1.getAnosExperiencia().compareTo(c2.getAnosExperiencia())).orElseThrow(); /*.orthrowelse*/
+	    System.out.println(candidatoConMasExperiencia);
+	    
+	    List<Tecnologias> tecnologiasOrdenadas = candidatoConMasExperiencia.ordenarTecnologias();
+	    tecnologiasOrdenadas.forEach(System.out::println);
+	}
+	
+	public void resolverPunto5 (List<Candidato> candidatos) {
+		Candidato candidatoConMasTecnologias = candidatos.stream().max((c1, c2) -> c1.getTecnologias().size() - c2.getTecnologias().size()).orElseThrow();
+		System.out.println(candidatoConMasTecnologias);
+		
+		List<Tecnologias> tecnologias = (List<Tecnologias>) candidatoConMasTecnologias;
+		
+	}
 }
 
