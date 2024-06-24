@@ -75,7 +75,6 @@ public class EvaluacionTecnicaPil2 {
 		System.out.println(candidatoConMasTecnologias);
 		
 		List<Tecnologias> tecnologias = (List<Tecnologias>) candidatoConMasTecnologias;
-		
 	}
 }
 
