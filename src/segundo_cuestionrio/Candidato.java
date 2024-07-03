@@ -5,16 +5,15 @@ import java.util.Objects;
 
 public class Candidato implements Comparable<Candidato>{
 	
-	Long id;
-	String nombre;
-	String apellido;
-	Integer anosExperiencia;
-	Double pretensionSalarial;
-	List<Tecnologias> tecnologias;
-	
+	private Long id;
+	private String nombre;
+	private String apellido;
+	private Integer anosExperiencia;
+	private Double pretensionSalarial;
+	private List<Tecnologias> tecnologias;
+
 	public Candidato(Long id, String nombre, String apellido, Integer anosExperiencia, Double pretensionSalarial,
 			List<Tecnologias> tecnologias) {
-		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -93,7 +92,7 @@ public class Candidato implements Comparable<Candidato>{
 	@Override
 	public String toString() {
 		return "Candidato [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", anosExperiencia="
-				+ anosExperiencia + ", pretensionSalarial=" + pretensionSalarial + ", list=" + tecnologias + "]";
+				+ anosExperiencia + ", pretensionSalarial=" + pretensionSalarial + ", list=" + tecnologias + "]" + "\n";
 	}
 
 	@Override

@@ -2,34 +2,20 @@ package segundo_cuestionrio;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class EvaluacionTecnicaPil2 {
 	
 	public static void main(String[] args) {
-		/*imprimirBienvenidaEvaluacionTecnica();
-		imprimirMensajePunto(1);
-		// Desarrollo de la consigna 1.
-		inicializarCandidatos();
-		resolverPunto1();
-		imprimirMensajePunto(2);
-		// Desarrollo de la consigna 2.
-		resolverPunto2();
-		imprimirMensajePunto(3);
-		// Desarrollo de la consigna 3.
-		resolverPunto3();
-		imprimirMensajePunto(4);
-		// Desarrollo de la consigna 3.
-		resolverPunto4();
-
-		| Evaluación técnica java
-
-		imprimirMensajePunto(5);
-		// Desarrollo de la consigna 3.
-		resolverPunto5();*/
+		resolverPunto1(inicializarCandidatos());
+		resolverPunto2(inicializarCandidatos());
+		resolverPunto3(inicializarCandidatos());
+		resolverPunto4(inicializarCandidatos());
+		resolverPunto5(inicializarCandidatos());
 	}
 	
-	public List<Candidato> inicializarCandidatos() {
+	public static List<Candidato> inicializarCandidatos() {
 		List<Candidato> candidatos = new ArrayList<Candidato>();
 		candidatos.add(new Candidato(3L, "Jhon", "Doe", 2, 5000.00, Arrays.asList(new Tecnologias(1L, "Java"), new Tecnologias(2L, "Angular"), new Tecnologias(3L, "SQL"))));
 		candidatos.add(new Candidato(7L, "Matias", "Otamendi", 9, 3000.00, Arrays.asList(new Tecnologias(8L, "NodeJS"), new Tecnologias(1L, "Java"))));
@@ -44,33 +30,42 @@ public class EvaluacionTecnicaPil2 {
 		return candidatos;
 	}
 	
-	public void resolverPunto1 (List<Candidato> candidatos) {
+	public static void resolverPunto1 (List<Candidato> candidatos) {
+		System.out.println("ejercisio 1");
 		/*candidatos.forEach(System.out::println);*/
-		System.out.println("lista candidatos = " + candidatos);
+		System.out.println("lista candidatos = " + candidatos.toString());
+		/*for (Candidato candidato : candidatos) {
+			System.out.println("lista candidatos = " + candidatos.toString() );
+		}*/
 	}
 	
-	public void resolverPunto2 (List<Candidato> candidatos) {
+	public static void resolverPunto2 (List<Candidato> candidatos) {
+		System.out.println("ejercisio 2");
 		candidatos.stream().sorted((cand1, cand2) -> cand1.compareTo(cand2))
-		.forEach(cand -> System.out.println(cand.getPretensionSalarial() + " " + cand.getNombre() + " " + cand.getApellido()));;
+		.forEach(cand -> System.out.println(cand.getId() + " " + cand.getPretensionSalarial() + " " + cand.getNombre() + " " + cand.getApellido()));
 	}
 	
-	public void resolverPunto3 (List<Candidato> candidatos) {
+	public static void resolverPunto3 (List<Candidato> candidatos) {
+		System.out.println("ejercisio 3");
 		candidatos.stream().sorted((cand1, cand2) -> cand2.getPretensionSalarial().compareTo(cand1.getPretensionSalarial()))
         .forEach(cand -> System.out.println(cand.getPretensionSalarial() + " " + cand.getNombre() + " " + cand.getApellido()));
 	}
 	
-	public void resolverPunto4 (List<Candidato> candidatos) {
-		/*candidatos.stream().sorted((cand1, cand2) -> cand2.getAnosExperiencia().compareTo(cand1.getAnosExperiencia()));*/
+	public static void resolverPunto4 (List<Candidato> candidatos) {
+		System.out.println("ejercisio 4");
+		candidatos.stream().sorted((cand1, cand2) -> cand2.getAnosExperiencia().compareTo(cand1.getAnosExperiencia()));
 		/*ordenarTecnologias.forEach(System.out.println(ordenarTecnologias));*/
 		
 		Candidato candidatoConMasExperiencia = candidatos.stream().max((c1, c2) -> c1.getAnosExperiencia().compareTo(c2.getAnosExperiencia())).orElseThrow(); /*.orthrowelse*/
+		List <Tecnologias> tecnoOrde = candidatoConMasExperiencia.ordenarTecnologias();
 	    System.out.println(candidatoConMasExperiencia);
 	    
-	    List<Tecnologias> tecnologiasOrdenadas = candidatoConMasExperiencia.ordenarTecnologias();
-	    tecnologiasOrdenadas.forEach(System.out::println);
+	    /*List<Tecnologias> tecnologiasOrdenadas = candidatoConMasExperiencia.ordenarTecnologias();*/
+	    /*tecnologiasOrdenadas.forEach(System.out::println);*/
 	}
 	
-	public void resolverPunto5 (List<Candidato> candidatos) {
+	public static void resolverPunto5 (List<Candidato> candidatos) {
+		System.out.println("ejercisio 5");
 		Candidato candidatoConMasTecnologias = candidatos.stream().max((c1, c2) -> c1.getTecnologias().size() - c2.getTecnologias().size()).orElseThrow();
 		System.out.println(candidatoConMasTecnologias);
 		

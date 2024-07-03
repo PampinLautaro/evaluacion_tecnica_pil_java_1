@@ -4,14 +4,13 @@ import java.util.Objects;
 
 public class Tecnologias {
 	
-	Long id;
-	String nombre;
+	private Long id;
+	private String nombre;
 	
 	// List<Tecnologias> tecnologias = new ArrayList<>();
 	
 	
 	public Tecnologias(Long id, String nombre) {
-		super();
 		this.id = id;
 		this.nombre = nombre;
 	}
