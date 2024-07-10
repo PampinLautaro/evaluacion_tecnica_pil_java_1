@@ -1,4 +1,4 @@
-package evaluacion_tecnica_pil_java_1_consignas;
+package primer_cuestionario;
 
 public class EvaluacionTecnicaPil1 {
 
@@ -47,13 +47,23 @@ public class EvaluacionTecnicaPil1 {
 			System.out.println("error");
 		}
 		
-		int j = 6;
-		int k = (j*2);
-		System.out.println("j = " + j);
-		System.out.println("k = " + k);
-			for(int l = 1; l <= (k/3); ++l) {
+		boolean b1 = true;
+		int valorInicial = 12;
+		int valorInicialDoble = valorInicial*2;
+		while (b1) {
+			valorInicial++;
+			if(valorInicial == valorInicialDoble) {
+				b1 = false;
+			}
+			System.out.println("valorInicial = " + valorInicial);
+		}
+		
+		int unTercio = valorInicial/3;
+		System.out.println("punto c");
+		System.out.println("valorInicial = " + valorInicial);
+		System.out.println("unTercio = " + unTercio);
+			for(int l = 1; l <= unTercio; ++l) {
 					System.out.println("l = " + l);
 			}
 	}
-
 }
